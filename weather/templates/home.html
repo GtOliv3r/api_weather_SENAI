@@ -1,27 +1,24 @@
-{% extends "main.html" %}
+{% extends "main.html" %} {% block content %}
 
-{% block content %}
+<h1>Temperaturas</h1>
 
-    <h1>Temperaturas</h1>
-
-    <div class="d-flex justify-content-start flex-wrap">
-
-        {% for weather in weathers %}
-        <div class="col-md-4 p-2">
-          <div class="card">
-            <div class="card-header">
-                Temperatura: {{ weather.temperature }}
-            </div>
-            <div class="card-body">
-                <p class="card-text">
-                    Data: {{ weather.date }} <br />
-                    Cidade
-                </p>
-            </div>
-          </div>
-        </div>
-
-        {% endfor %}
-
+<div class="d-flex justify-content-start flex-wrap">
+  {% for weather in weathers %}
+  <div class="col-md-4 p-2">
+    <div class="card">
+      <div class="card-header">Temperatura: {{ weather.temperature }}</div>
+      <div class="card-body">
+        <p class="card-text">
+          Data: {{ weather.date}} <br />
+          Cidade: {{weather.city}} <br />
+          Umidade: {{weather.humidity}} <br />
+          Pressão Atmosférica: {{weather.atmosphericPressure}} <br />
+          Clima: {{weather.weather}} <br />
+        </p>
+      </div>
     </div>
+  </div>
+
+  {% endfor %}
+</div>
 {% endblock content %}
